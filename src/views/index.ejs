@@ -1,26 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
+<%- include('includes/head'); %>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Modelo</title>
-</head>
+    <body>
 
-<body>
+        <section class="container">
+            <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit.</h1>
+            <form action="/" method="post">
+                <!-- [ABAIXO] input type hidden para criar um token de segurança para cada formulário enviado -->
+                <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+                <label>Cliente</label>
+                <input type="text" name="cliente">
+                <button>Submit</button>
+            </form>
+        </section>
 
-    <section class="container">
-        <h1> Lorem ipsum dolor sit amet, consectetur adipisicing elit.</h1>
-        <form action="/" method="post">
-            <label>Cliente</label>
-            <input type="text" name="cliente">
-            <button>Submit</button>
-        </form>
-    </section>
-
-
-
-    <script src="./assets/js/bundle.js"></script>
-</body>
-
-</html>
+        <%- include('includes/footer'); %>

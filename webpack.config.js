@@ -1,3 +1,7 @@
+/*
+Esse arquivo é a configuração do Webpack, um empacotador de arquivos front-end.
+
+*/
 const path = require('path'); // CommonJS
 
 module.exports = {
