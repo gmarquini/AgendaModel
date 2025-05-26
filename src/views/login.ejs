@@ -1,76 +1,82 @@
+<!-- login.ejs: -->
 <%- include('includes/head'); %>
     <%- include('includes/nav'); %>
 
         <div class="container">
             <div class="row">
                 <div class="col-lg-2"></div>
+
                 <div class="col-lg-8 my-3">
                     <h1 class="text-center">Login</h1>
                     <p class="text-center lead">Faça login ou crie sua conta abaixo.</p>
 
-                    <div class="row">
-                        <div class="col-lg">
-                            <p class="mb-1">Seu primeiro acesso?</p1>
-                            <h4 class="mb-3">Faça seu cadastro</h4>
+                    <%- include('includes/messages', {errors: errors, success: success}); %>
+
+                        <div class="row">
+                            <div class="col-lg">
+                                <p class="mb-1">Seu primeiro acesso?</p1>
+                                <h4 class="mb-3">Faça seu cadastro</h4>
 
 
-                            <form action="/login/register" method="POST">
-                                <input type="hidden" name="_csrf" value=<%=csrfToken %>>
+                                <form action="/login/register" method="POST">
+                                    <input type="hidden" name="_csrf" value=<%=csrfToken %>>
 
-                                <div class="mb-3">
+                                    <div class="mb-3">
 
-                                    <label>Email:</label>
-                                    <input type="email" class="form-control" name="email" aria-describedby="emailHelp">
-                                    <div id="emailHelp" class="form-text">Não iremos compartilhar seu e-mail com
-                                        ninguém.
+                                        <label>Email:</label>
+                                        <input type="email" class="form-control" name="email"
+                                            aria-describedby="emailHelp">
+                                        <div id="emailHelp" class="form-text">Não iremos compartilhar seu e-mail com
+                                            ninguém.
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="mb-3">
-                                    <label class="form-label">Password</label>
-                                    <input type="password" class="form-control">
-                                </div>
-                                <div class="mb-3 form-check">
-                                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                                    <label class="form-check-label" for="exampleCheck1">Manter conectado (não
-                                        funciona
-                                        kkk)</label>
-                                </div>
-                                <button type="submit" class="btn btn-primary">Submit</button>
-                            </form>
-                        </div>
-
-
-                        <div class="col-lg">
-                            <p class="mb-1">Já possui conta?</p1>
-                            <h4 class="mb-3">Faça seu Login</h4>
-
-
-                            <form action="/login/login" method="POST">
-                                <input type="hidden" name="_csrf" value=<%=csrfToken %>>
-
-                                <div class="mb-3">
-
-                                    <label>Email:</label>
-                                    <input type="email" class="form-control" name="email" aria-describedby="emailHelp">
-                                    <div id="emailHelp" class="form-text">Não iremos compartilhar seu e-mail com
-                                        ninguém.
+                                    <div class="mb-3">
+                                        <label class="form-label">Password</label>
+                                        <input type="password" name="password" class="form-control">
                                     </div>
-                                </div>
-                                <div class="mb-3">
-                                    <label class="form-label">Password</label>
-                                    <input type="password" class="form-control">
-                                </div>
-                                <div class="mb-3 form-check">
-                                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                                    <label class="form-check-label" for="exampleCheck1">Manter conectado (não
-                                        funciona
-                                        kkk)</label>
-                                </div>
-                                <button type="submit" class="btn btn-primary">Entrar</button>
-                            </form>
-                        </div>
+                                    <div class="mb-3 form-check">
+                                        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                                        <label class="form-check-label" for="exampleCheck1">Manter conectado (não
+                                            funciona
+                                            kkk)</label>
+                                    </div>
+                                    <button type="submit" class="btn btn-primary">Submit</button>
+                                </form>
+                            </div>
 
-                    </div>
+
+                            <div class="col-lg">
+                                <p class="mb-1">Já possui conta?</p1>
+                                <h4 class="mb-3">Faça seu Login</h4>
+
+
+                                <form action="/login/login" method="POST">
+                                    <input type="hidden" name="_csrf" value=<%=csrfToken %>>
+
+                                    <div class="mb-3">
+
+                                        <label>Email:</label>
+                                        <input type="email" class="form-control" name="email"
+                                            aria-describedby="emailHelp">
+                                        <div id="emailHelp" class="form-text">Não iremos compartilhar seu e-mail com
+                                            ninguém.
+                                        </div>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label">Password</label>
+                                        <input type="password" name="password" class="form-control">
+                                    </div>
+                                    <div class="mb-3 form-check">
+                                        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                                        <label class="form-check-label" for="exampleCheck1">Manter conectado (não
+                                            funciona
+                                            kkk)</label>
+                                    </div>
+                                    <button type="submit" class="btn btn-primary">Entrar</button>
+                                </form>
+                            </div>
+
+                        </div>
 
                 </div>
 

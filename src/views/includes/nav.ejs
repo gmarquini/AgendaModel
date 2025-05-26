@@ -1,8 +1,22 @@
+<!-- nav.ejs -->
 <nav id="navbar-example2" class="navbar bg-dark px-3 mb-3">
     <a class="navbar-brand text-white" href="#">Agenda</a>
     <ul class="nav nav-pills">
+
         <li class="nav-item">
-            <a class="nav-link" href="#">Link</a>
+            <a class="nav-link" href="/contato/index">Cadastrar contato</a>
         </li>
+
+        <% if(user) { %>
+            <li class="nav-item">
+                <a class="nav-link" href="/login/logout">Sair</a>
+            </li>
+            <% } else { %>
+                <li class="nav-item">
+                    <a class="nav-link" href="/login/index">Entrar</a>
+                </li>
+                <% } %>
+
+
     </ul>
 </nav>
